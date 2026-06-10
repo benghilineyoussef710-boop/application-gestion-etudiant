@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>ajouter etudiant</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                <h1 class="text-center">modifier etudiant</h1>
+                <div class="card-body">
+                    <form th:action="@{/etudiants/{id}(id=${etudiant.id})}" th:object="${etudiant}" method="post">
+                        <div class="form-group">
+                            <label for=""></label>
+                            <input type="text" th:field="*{nom}" name="nom" id="" placeholder="nom" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""></label>
+                            <input type="text" th:field="*{prenom}" name="" id="prenom" placeholder="prenom" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for=""></label>
+                            <input type="text" th:field="*{email}" name="" id="email" placeholder="email" class="form-control">
+                        </div>
+                        <div class="fotter-body">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
